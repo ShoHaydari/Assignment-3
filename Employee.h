@@ -1,8 +1,4 @@
-//Cédric Hakizimana 40112938
-//Shokhad Haydari 40111203
-//Assignment #3
-//Platform/IDE used: Microsoft Visual Studio
-using namespace std;
+
 #ifndef Employee_hpp
 #define Employee_hpp
 
@@ -13,25 +9,26 @@ using namespace std;
 class Employee {
 
 private:
-    string firstname;
-    string lastname;
-    string socialsecuritynumber;
+    std::string firstname;
+    std::string lastname;
+    std::string socialsecuritynumber;
 
 public:
 
-    Employee(const string&, const string&, const string&);
-    void setfirstname(const string&);
-    void setlastname(const string&);
-    void setsocialsecuritynumber(const string&);
-    string getfirstname()const ;
-    string getlastname()const;
-    string getsocialsecuritynumber()const;
+    Employee(const std::string&, const std::string&, const std::string&); //constructor
+    void setfirstname(const std::string&);//function to set first name
+    void setlastname(const std::string&); //function to set last name
+    void setsocialsecuritynumber(const std::string&); //function to set social security number
+    std::string getfirstname()const ; //function to print first name
+    std::string getlastname()const; //function to print last name
+    std::string getsocialsecuritynumber()const; // function print social security number
 
-    virtual double earnings() const= 0;// this makes employee an abstract class
-    virtual string toString() const;
+    virtual double earnings() const= 0;// pure virtual function, making employee an abstract class
+    virtual std::string toString() const; //virtual function
     
     virtual ~Employee()= default ;//generates a virtual constructor
 
 };
 
 #endif /* Employee_hpp */
+
