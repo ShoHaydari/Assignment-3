@@ -1,6 +1,3 @@
-  
-//Cédric Hakizimana 40112938
-//Shokhad Haydari 40111203
 //Assignment #3
 //Platform/IDE used: Microsoft Visual Studio
 #pragma once
@@ -8,17 +5,17 @@
 #ifndef PieceWorker_hpp
 #define PieceWorker_hpp
 
-class PieceWorker: public Employee {
-    
+class PieceWorker: public Employee //inherits the member functions of Employee
+{
 public:
     
-    PieceWorker(const string&,const string&, const string&,double=0.0, double=0.0);
-    void setwage(double);
-    void setpieces(double);
-    double getwage() const;
-    double getpieces() const;
-    virtual double earnings() const;
-    virtual string toString () const;
+    PieceWorker(const std::string&,const std::string&, const std::string&,double=0.0, double=0.0); //constructor
+    void setwage(double); //sets the wage
+    void setpieces(double); //sets the pieces sold
+    double getwage() const; //returns the wage
+    double getpieces() const; //returns the pieces sold
+    virtual double earnings() const override; //calculates the amount earned
+    virtual std::string toString () const override; //override the toString function of class Employee
     
 private:
     double wage; // determines the wage earned
